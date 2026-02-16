@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+  /* Estilos del Grid (Parte Superior - Intactos) */
+  .overlay-gradient {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 50%, transparent 100%);
+  }
+
+  .text-shadow-strong {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+  }
+
+  .title-truncate {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+  }
+
+  .title-truncate-large {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+  }
+
+  @media (min-width: 992px) {
+    .title-truncate {
+      -webkit-line-clamp: 1;
+    }
+
+    .title-truncate-large {
+      -webkit-line-clamp: 3;
+    }
+  }
+
+  /* Altura automática por defecto (Móvil) */
+  .card-fixed-height {
+    height: auto;
+  }
+
+  /* La imagen debe ocupar el 100% de SU columna, no de la pantalla */
+  .mini-grid-img {
+    width: 100%;
+    height: 100%;
+    min-height: 250px;
+    object-fit: cover;
+    border-radius: 0.375rem;
+    /* Bordes redondeados */
+  }
+
+  /* Truncado de descripción */
+  .desc-truncate {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: auto;
+    /* Auto height on mobile */
+  }
+
+  @media (min-width: 768px) {
+
+    /* Altura fija solo en Desktop cuando las columnas están lado a lado */
+    .card-fixed-height {
+      height: 280px;
+    }
+
+    .desc-truncate {
+      height: 125px;
+      /* Fixed height to push link on desktop */
+    }
+  }
+  .img-cover-fit {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
+
+{% if lista_articulos %}
+<div class="container-fluid px-lg-5 px-3 mt-3">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="fw-bold m-0">Últimos Artículos</h2>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      {% for art in lista_articulos %}
+      <div class="card mb-4 border shadow-sm card-fixed-height">
+
+        <div class="card-body h-100 p-3">
+          <div class="row h-100">
+
+            <div class="col-md-3 h-100">
+              <div class="card overflow-hidden card-custom-border h-100">
+                <div class="card-body p-0 position-relative h-100">
+                  <img src="{{ art[1] }}" class="img-cover-fit" alt="{{ art[0] }}" />
+                  <a href="#" class="stretched-link"></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-9 h-100">
+              <div class="d-flex flex-column h-100 ps-0 ps-md-3 pt-1 pt-md-0 gap-1">
+                <h4 class="card-title fw-bold text-dark text-truncate m-0">{{ art[0] }}</h4>
+                <h6 class="card-subtitle text-muted m-0">{{ art[3] }}</h6>
+
+                <p class="card-text text-body desc-truncate m-0">
+                  {{ art[2] }}
+                </p>
+
+                <div class="mt-auto text-end">
+                  <a href="{{art[4]}}" class="card-link text-decoration-none fw-bold text-dark stretched-link">
+                    Leer nota <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+            <div class="text-center mt-5">
+        <a href="/articulos" class="btn btn-dark btn-lg px-5 rounded-pill">
+          Ver más artículos
+        </a>
+      </div>
+
+      </div>
+  </div>
+</div>
+
+{% else %}
+<div class="container-fluid px-lg-5 px-3 mb-4 pt-4">
+  <div class="row">
+    <div class="col-12">
+      <div class="alert alert-danger text-center p-5">
+
+        <p class="fs-5 mb-2">
+          <strong>¡Lo sentimos!</strong> No se encontraron artículos publicados.
+        </p>
+
+        <p>
+          <a href="/" class="alert-link">Intenta recargar la página</a>.
+        </p>
+
+        <div class="mt-4">
+          <img src="{{ url_for('static', filename='no_content.jpg') }}" alt="Sin contenido" class="img-fluid rounded"
+            style="max-height: 300px; width: auto;">
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% endblock %}

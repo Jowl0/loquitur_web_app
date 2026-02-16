@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Loquitur</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='bootstrap.css') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <style>
+      /* === ESTILOS GLOBALES === */
+
+      /* Para que el footer siempre se vaya al fondo aunque haya poco contenido */
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      footer {
+        margin-top: auto;
+      }
+
+      /* === ESTILOS DEL GRID (Necesarios aquí para herencia) === */
+      .card-custom-border {
+        border-width: 2px !important;
+      }
+
+      .grid-img {
+        width: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* Alturas responsivas para el Grid */
+      .h-large {
+        height: 250px !important;
+      }
+
+      .h-small {
+        height: auto !important;
+        aspect-ratio: 1 / 1;
+      }
+
+      @media (min-width: 992px) {
+        .h-large {
+          height: 500px !important;
+        }
+
+        .h-small {
+          height: 242px !important;
+          aspect-ratio: auto;
+        }
+      }
+
+      .navbar {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img
+            src="{{ url_for('static', filename='logo.png') }}"
+            alt="Logo"
+            width="120"
+            height="35"
+            class="d-inline-block align-text-top"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#nav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="/articulos">Artículos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Quiénes Somos?</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav d-flex flex-row gap-3">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="bi bi-instagram"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="bi bi-facebook"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="bi bi-twitter-x"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="bi bi-youtube"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    {% block content %} {% endblock %}
+
+    <footer class="py-4 mt-5 border-top border-3 border-dark">
+      <div class="container-fluid px-lg-5 px-3">
+        <div
+          class="d-flex flex-wrap justify-content-between align-items-center"
+        >
+          <div class="col-md-4 d-flex align-items-center">
+            <a href="/" class="me-2 text-decoration-none">
+              <img
+                src="{{ url_for('static', filename='logo.png') }}"
+                width="60"
+                height="15"
+                alt="Logo"
+              />
+            </a>
+            <span class="text-dark fw-bold">© 2026</span>
+          </div>
+          <ul class="navbar-nav d-flex flex-row gap-3">
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="#"
+                ><i class="bi bi-instagram"></i
+              ></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="#"
+                ><i class="bi bi-facebook"></i
+              ></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="#"
+                ><i class="bi bi-twitter-x"></i
+              ></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="#"
+                ><i class="bi bi-youtube"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
