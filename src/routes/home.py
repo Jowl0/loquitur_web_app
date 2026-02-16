@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template,request
 from src.database.db import db
 from src.models.articulo import articulo
 from src.models.imagen import imagen

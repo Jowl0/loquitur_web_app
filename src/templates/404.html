@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block titulo %}404 No encontrado{% endblock %}
+{% block content %}
+<div class="container-fluid px-lg-5 px-3 mb-4 pt-4">
+  <div class="row">
+    <div class="col-12">
+      <div class="alert alert-danger text-center p-5">
+
+        <p class="fs-5 mb-2">
+          <strong>¡Oooops!</strong> La pagina que buscas no existe.
+        </p>
+
+        <p>
+          <a href="/" class="alert-link">Intenta ir a la pagina principal</a>.
+        </p>
+
+        <div class="mt-4">
+          <img src="{{ url_for('static', filename='404.jpg') }}" alt="Sin contenido" class="img-fluid rounded"
+            style="max-height: 300px; width: auto;">
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
