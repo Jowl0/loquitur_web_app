@@ -10,13 +10,13 @@ class Config:
         os.path.join(PROJECT_ROOT, "data")
     )
 
-    ARTICULOS_DIR = os.getenv(
-        "ARTICULOS_DIR",
-        os.path.join(PROJECT_ROOT, "articulos")
+    MEDIA_DIR = os.getenv(
+        "MEDIA_DIR",
+        os.path.join(PROJECT_ROOT, "media")
     )
 
     os.makedirs(DATA_DIR, exist_ok=True)
-    os.makedirs(ARTICULOS_DIR, exist_ok=True)
+    os.makedirs(MEDIA_DIR, exist_ok=True)
 
     SQLALCHEMY_DATABASE_URI = os.getenv(
         "DATABASE_URL",

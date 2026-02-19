@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Loquitur - Autores{% endblock %}
+
+{% block content %}
+<style>
+  .director-card-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-top-left-radius: calc(0.375rem - 1px);
+    border-top-right-radius: calc(0.375rem - 1px);
+  }
+
+  @media (min-width: 768px) {
+    .director-card-img {
+      width: 200px;
+      height: 200px;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: calc(0.375rem - 1px);
+      border-top-left-radius: calc(0.375rem - 1px);
+    }
+  }
+</style>
+
+<div class="container-fluid px-lg-5 px-3 pt-4 pb-5">
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <h2 class="fw-bold mb-4 text-start text-dark">Conoce a nuestro equipo editorial</h2>
+
+
+      {% for autor in autores %}
+
+      <div class="card border-dark position-relative mb-4">
+        <div class="row g-0 align-items-center">
+
+          <div class="col-md-auto">
+            <img src="{{autor.imagen}}" class="director-card-img" alt="Autor">
+          </div>
+
+          <div class="col p-3">
+            <h5 class="fw-bold mb-2">
+              {{autor.nombre}} <small class="text-muted fw-normal ms-2" style="font-size: 0.75rem;">&bull; Desde:
+                {{autor.fecha_registro}}</small>
+            </h5>
+            <a href="{{autor.url_perfil}}" class="stretched-link"></a>
+            <p class="small mb-2">"Caminante, no hay camino, se hace camino al andar."</p>
+
+            <div class="d-inline-flex flex-column align-items-start gap-1 position-relative" style="z-index: 2;">
+              <a href="#" class="text-muted small text-decoration-none"><i
+                  class="bi bi-envelope-fill me-2"></i>contacto@loquitur.unam.mx</a>
+              <a href="#" class="text-muted small text-decoration-none"><i class="bi bi-instagram me-2"></i>@usuario</a>
+              <a href="#" class="text-muted small text-decoration-none"><i
+                  class="bi bi-linkedin me-2"></i>linkedin.com/in/usuario</a>
+              <a href="#" class="text-muted small text-decoration-none"><i class="bi bi-twitter-x me-2"></i>@usuario</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      {%endfor%}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

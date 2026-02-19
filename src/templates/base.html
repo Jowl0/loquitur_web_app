@@ -18,15 +18,17 @@
     <style>
       /* === ESTILOS GLOBALES === */
 
-      /* Para que el footer siempre se vaya al fondo aunque haya poco contenido */
+      /* CORRECCIÓN: Quitamos min-height: 100vh para que el footer no se vaya al fondo solo */
       body {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
+        min-height: auto; 
+        display: block;
+        position: relative;
+        padding-bottom: 0;
       }
 
+      /* Quitamos el margin-top: auto que empujaba el footer */
       footer {
-        margin-top: auto;
+        margin-top: 0;
       }
 
       /* === ESTILOS DEL GRID (Necesarios aquí para herencia) === */
@@ -92,7 +94,10 @@
               <a class="nav-link active" href="/articulos">Artículos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Quiénes Somos?</a>
+              <a class="nav-link" href="/autores">Autores</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/quienes_somos">Quiénes somos?</a>
             </li>
           </ul>
           <ul class="navbar-nav d-flex flex-row gap-3">
@@ -115,7 +120,7 @@
 
     {% block content %} {% endblock %}
 
-    <footer class="py-4 mt-5 border-top border-3 border-dark">
+    <footer class="py-4 mt-3 border-top border-3 border-dark">
       <div class="container-fluid px-lg-5 px-3">
         <div
           class="d-flex flex-wrap justify-content-between align-items-center"

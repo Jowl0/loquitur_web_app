@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Loquitur - Quienes somos?{% endblock %}
+
+{% block content %}
+<style>
+  .director-card-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-top-left-radius: calc(0.375rem - 1px);
+    border-top-right-radius: calc(0.375rem - 1px);
+  }
+
+  @media (min-width: 768px) {
+    .director-card-img {
+      width: 200px;
+      height: 200px;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: calc(0.375rem - 1px);
+      border-top-left-radius: calc(0.375rem - 1px);
+    }
+  }
+</style>
+<div class="container py-5">
+
+  <div class="text-center mb-5">
+    <h5 class="fst-italic fw-light text-dark mb-2">"Donde el derecho siempre habla"</h5>
+    <p class="small fw-bold text-dark mb-4" style="letter-spacing: 1px;">
+      Revista de la comunidad estudiantil de la Facultad de Derecho de la UNAM.
+    </p>
+    <hr class="w-25 mx-auto border-dark opacity-100">
+  </div>
+
+  <div class="row g-5">
+
+    <div class="col-lg-8">
+      <h2 class="fw-bold mb-4 text-dark">Sobre Nosotros</h2>
+
+      <div style="text-align: justify;" class="text-dark">
+        <p class="mb-3">
+          La Facultad de Derecho ha sido históricamente un espacio donde se forjan no solo profesionistas, sino también
+          ideas que trascienden en el ámbito académico, social y jurídico del país.
+        </p>
+        <p class="mb-3">
+          En ese marco surge la revista <strong>Loquitur</strong>, concebida como un puente entre la tradición y la
+          innovación. El derecho, al ser una disciplina viva, no permanece estático: evoluciona, dialoga y responde a
+          los desafíos de cada época. Loquitur busca capturar esa dinámica, convirtiéndose en un espacio donde “el
+          derecho siempre habla” mediante las voces de quienes lo piensan, lo enseñan y lo ejercen.
+        </p>
+        <p>
+          Su carácter híbrido —formal en su rigor académico, juvenil en su espíritu crítico— garantiza que tanto los
+          lectores como los autores encuentren un medio que refleje las necesidades de su tiempo sin renunciar a la
+          solidez de la tradición jurídica. Así, Loquitur no se presenta como una revista más, sino como la oportunidad
+          de formar parte de una iniciativa que quedará inscrita en la memoria intelectual de la Facultad.
+        </p>
+      </div>
+
+      <h4 class="fw-bold mb-3 mt-4">Director de Loquitur</h4>
+
+      <div class="card border-dark position-relative">
+        <div class="row g-0 align-items-center">
+          <div class="col-md-auto">
+            <img src="/static/director.webp" class="director-card-img" alt="Director">
+          </div>
+          <div class="col p-3">
+            <h5 class="fw-bold mb-2">Arteaga Ramírez Jordahi</h5>
+            <a href="/autores/jordahi_arteaga_ramirez/" class="stretched-link"></a>
+            <p class="small mb-2">"Caminante, no hay camino, se hace camino al andar."</p>
+
+            <div class="d-inline-flex flex-column align-items-start gap-1 position-relative" style="z-index: 2;">
+              <a href="#" class="text-muted small text-decoration-none"><i
+                  class="bi bi-envelope-fill me-2"></i>contacto@loquitur.unam.mx</a>
+              <a href="#" class="text-muted small text-decoration-none"><i class="bi bi-instagram me-2"></i>@usuario</a>
+              <a href="#" class="text-muted small text-decoration-none"><i
+                  class="bi bi-linkedin me-2"></i>linkedin.com/in/usuario</a>
+              <a href="#" class="text-muted small text-decoration-none"><i class="bi bi-twitter-x me-2"></i>@usuario</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h5 class="fw-bold mt-4 mb-3">Pagina creada Por:</h5>
+      <div class="alert d-flex justify-content-between align-items-center" style="background-color: #FFFDD0;">
+        <strong>Joel Reyes Garcia</strong>
+        <div class="fs-5">
+          <a href="#" class="text-decoration-none me-3"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="text-decoration-none me-3"><i class="bi bi-github"></i></a>
+          <a href="#" class="text-decoration-none"><i class="bi bi-globe"></i></a>
+        </div>
+      </div>
+      <div class="alert d-flex justify-content-between align-items-center" style="background-color: #FFFDD0;">
+        <strong>Elias Custodio Wong</strong>
+        <div class="fs-5">
+          <a href="#" class="text-decoration-none me-3"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="text-decoration-none me-3"><i class="bi bi-github"></i></a>
+          <a href="#" class="text-decoration-none"><i class="bi bi-globe"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+
+      <div class="card border-dark mb-4" style="width: 100%;">
+        <div class="card-header fw-bold">Identidad de la Revista</div>
+        <div class="card-body text-dark">
+
+          <div class="mb-3">
+            <h6 class="card-title fw-bold d-inline-block">Visión:</h6>
+            <p class="card-text small mt-1">
+              Ser un espacio académico y crítico en el que las y los estudiantes de derecho puedan expresar sus ideas,
+              investigaciones y opiniones sobre temas jurídicos y sociales.
+            </p>
+          </div>
+
+          <div class="mb-3">
+            <h6 class="card-title fw-bold d-inline-block">Misión:</h6>
+            <p class="card-text small mt-1">
+              Generar una publicación periódica que combine la formalidad jurídica con una perspectiva fresca y juvenil,
+              fomentando el debate, la creatividad y la formación académica.
+            </p>
+          </div>
+
+          <div>
+            <h6 class="card-title fw-bold d-inline-block">Valores:</h6>
+            <ul class="list-unstyled card-text small mt-2 mb-0">
+              <li><i class="bi bi-check2 text-dark me-2"></i>Rigor académico</li>
+              <li><i class="bi bi-check2 text-dark me-2"></i>Pluralidad</li>
+              <li><i class="bi bi-check2 text-dark me-2"></i>Pensamiento crítico</li>
+              <li><i class="bi bi-check2 text-dark me-2"></i>Libertad de expresión</li>
+              <li><i class="bi bi-check2 text-dark me-2"></i>Innovación</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="card border-dark mb-3" style="width: 100%;">
+        <div class="card-header fw-bold">Público Objetivo</div>
+        <div class="card-body text-dark">
+          <h5 class="card-title mb-3">Nuestra Comunidad</h5>
+
+          <div class="card-text mb-3">
+            <strong>Principal:</strong><br>
+            Estudiantes de la Facultad de Derecho.
+          </div>
+
+          <div class="card-text mb-4">
+            <strong>Secundario:</strong><br>
+            Profesores, investigadores, egresados y la comunidad universitaria.
+          </div>
+
+          <div>
+            <a href="/articulos" class="card-link fw-bold text-dark">Ver Artículos</a>
+            <a href="/contacto" class="card-link fw-bold text-dark ms-3">Contacto</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
