@@ -10,7 +10,6 @@ def create_app():
     app.config.from_object(Config)
 
     db.init_app(app)
-    app.secret_key = 'una_clave_muy_secreta_y_unica'
     with app.app_context():
         db.create_all()
 

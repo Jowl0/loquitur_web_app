@@ -1,0 +1,348 @@
+/* === ESTILOS GLOBALES === */
+
+/* Fonts */
+/* Imported in base.html via <link> tags */
+
+:root {
+    --font-heading: 'Cambo', serif;
+    --font-body: 'Cambo', serif;
+}
+
+body {
+    min-height: auto;
+    display: block;
+    position: relative;
+    padding-bottom: 0;
+    font-family: var(--font-body);
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-brand {
+    font-family: var(--font-heading);
+}
+
+/* Quitamos el margin-top: auto que empujaba el footer */
+footer {
+    margin-top: 0;
+}
+
+/* === ESTILOS DEL GRID (Necesarios aquí para herencia) === */
+.card-custom-border {
+    border-width: 2px !important;
+}
+
+.grid-img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Alturas responsivas para el Grid */
+.h-large {
+    height: 250px !important;
+    object-fit: cover;
+    width: 100%;
+}
+
+.h-small {
+    height: auto !important;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    width: 100%;
+}
+
+@media (min-width: 992px) {
+    .h-large {
+        height: 500px !important;
+    }
+
+    .h-small {
+        height: 242px !important;
+        aspect-ratio: auto;
+    }
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* === ESTILOS DEL HOME / ARTICULOS === */
+.overlay-gradient {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.98) 0%, rgba(0, 0, 0, 0.7) 60%, transparent 100%);
+}
+
+.overlay-gradient-lighter {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+}
+
+.text-shadow-strong {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.95);
+}
+
+.text-shadow-light {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.title-truncate {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+}
+
+.title-truncate-large {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+}
+
+@media (min-width: 992px) {
+    .title-truncate {
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+    }
+
+    .title-truncate-large {
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+    }
+}
+
+/* Increase font size for titles in the grid */
+.fw-bold.text-white {
+    font-size: 1.5rem;
+}
+
+/* Specific overwrite for articulos/perfil_autor lists if needed diff from home grid */
+/* But generally consistent is better */
+
+.card-fixed-height {
+    height: auto;
+}
+
+.desc-truncate {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: auto;
+}
+
+@media (min-width: 768px) {
+    .fw-bold.text-white {
+        font-size: 1.75rem;
+        /* Larger on desktop */
+    }
+
+    .card-fixed-height {
+        height: 280px;
+    }
+
+    .desc-truncate {
+        height: 125px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .card-fixed-height {
+        height: auto !important;
+        min-height: 450px !important;
+    }
+
+    .card-fixed-height .row>div:first-child {
+        height: 200px !important;
+        width: 100%;
+    }
+
+    .card-fixed-height .row>div:last-child {
+        height: auto !important;
+        padding-top: 1rem !important;
+    }
+
+    .desc-truncate {
+        -webkit-line-clamp: 6 !important;
+        line-clamp: 6 !important;
+    }
+}
+
+.img-cover-fit {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Carousel Mobile Home */
+.h-carousel-mobile {
+    height: 400px;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* Carousel Indicators as Dots */
+.carousel-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-left: 6px;
+    margin-right: 6px;
+    background-color: #fff;
+    opacity: 0.7;
+    border: none;
+}
+
+.carousel-indicators .active {
+    opacity: 1;
+    background-color: #fff;
+}
+
+/* === ESTILOS PERFIL AUTOR / AUTORES / QUIENES SOMOS === */
+
+.profile-card-img,
+.director-card-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.director-card-img {
+    border-top-left-radius: calc(0.375rem - 1px);
+    border-top-right-radius: calc(0.375rem - 1px);
+}
+
+@media (min-width: 768px) {
+    .profile-card-img {
+        width: 350px;
+        height: 350px;
+    }
+
+    .director-card-img {
+        width: 200px;
+        height: 200px;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: calc(0.375rem - 1px);
+        border-top-left-radius: calc(0.375rem - 1px);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .profile-display-mobile {
+        font-size: 1.4rem !important;
+        line-height: 1.2;
+    }
+
+    .profile-display-mobile small {
+        font-size: 0.85rem !important;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 0.25rem;
+    }
+}
+
+/* === ESTILOS ARTICULO INDIVIDUAL === */
+
+.article-header-bg {
+    min-height: 80vh;
+}
+
+.article-alert-hover {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.article-alert-hover:hover {
+    opacity: 0.1;
+}
+
+/* Force Cambo font on all injected article content */
+.article-content {
+    text-align: justify;
+}
+
+.article-content,
+.article-content * {
+    font-family: 'Cambo', serif !important;
+}
+
+/* Responsive styles for article */
+@media (max-width: 991.98px) {
+    .article-header-bg {
+        min-height: auto !important;
+        /* Allow height to fit content */
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .article-title {
+        font-size: 1.5rem !important;
+    }
+
+    .article-date {
+        font-size: 0.75rem !important;
+    }
+
+    .article-desc {
+        font-size: 1rem !important;
+    }
+
+    .article-content {
+        font-size: 1rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Increase font size for Quienes Somos page on mobile */
+    .container.py-5 .lead,
+    .container.py-5 p,
+    .container.py-5 h2,
+    .container.py-5 h5 {
+        font-size: 1.1em !important;
+    }
+
+    .container.py-5 h2 {
+        font-size: 1.5em !important;
+    }
+}
+
+@media (min-width: 992px) {
+
+    /* Increase font sizes on desktop, excluding base */
+    h1 {
+        font-size: 2.75rem;
+    }
+
+    h2 {
+        font-size: 2.25rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    h4 {
+        font-size: 1.75rem;
+    }
+
+    h5 {
+        font-size: 1.5rem;
+    }
+
+    h6 {
+        font-size: 1.25rem;
+    }
+
+    p,
+    .lead,
+    li {
+        font-size: 1.1rem;
+    }
+}
