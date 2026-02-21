@@ -5,5 +5,6 @@ from .edicion import edicion
 from .autor import autor
 from .edicion_articulo import edicion_articulo
 from .autoria import autoria
+from .admin import admin
 
 

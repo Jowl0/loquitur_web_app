@@ -58,7 +58,7 @@
       {% endfor %}
   </div>
 
-  <div class="carousel-inner rounded border border-3 border-dark overflow-hidden">
+  <div class="carousel-inner rounded border border-3 border-transparent overflow-hidden">
     {% for i in range(0, grid|length if grid|length < 5 else 5) %} <div
       class="carousel-item {% if i == 0 %}active{% endif %}">
       <div class="card border-0 text-white">
@@ -117,7 +117,7 @@
 
       <div id="contenedor-articulos">
         {% for art in lista_articulos %}
-        <div class="card mb-4 border shadow-sm card-fixed-height">
+        <div class="card mb-4 border border-transparent shadow-sm card-fixed-height">
           <div class="card-body h-100 p-3">
             <div class="row h-100">
 

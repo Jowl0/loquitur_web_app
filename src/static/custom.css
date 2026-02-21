@@ -32,6 +32,11 @@ footer {
     margin-top: 0;
 }
 
+/* === BORDES TRANSPARENTES === */
+.border-transparent {
+    border-color: transparent !important;
+}
+
 /* === ESTILOS DEL GRID (Necesarios aquí para herencia) === */
 .card-custom-border {
     border-width: 2px !important;
