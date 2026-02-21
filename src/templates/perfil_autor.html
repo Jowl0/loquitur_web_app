@@ -109,7 +109,7 @@
                 {% endfor %}
             </div>
             <div id="btn-container" class="text-center py-2">
-                <button id="btn-ver-mas" data-autor="{{autor[0].id}}" class="btn btn-dark px-5 rounded-pill"
+                <button id="btn-ver-mas-articulos-lista-autor" data-autor="{{autor[0].id}}" class="btn btn-dark px-5 rounded-pill"
                     data-url="/api/ver_mas">
                     Ver más artículos
                 </button>
@@ -134,6 +134,6 @@
     </div>
 </div>
 
-<script src="{{ url_for('static', filename='js/ver_mas.js') }}"></script>
+<script src="{{ url_for('static', filename='js/ver_mas_articulos_lista_autor_boton.js') }}"></script>
 
 {% endblock %}
